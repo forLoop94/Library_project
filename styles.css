@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+body {
+  justify-content: center;
+  padding: 10% 0rem;
+  background-color: black;
+}
+
+main {
+  width: 70%;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+main section {
+  padding: 2rem;
+}
+
+.menu {
+  background-color: aqua;
+}
+
+.main-body {
+  width: 70%;
+  background-color: white;
+}
+
+.genre-display, genre-form {
+  padding-bottom: 2rem;
+}
+
+.genre-input, .genre-add {
+  border: none;
+  background: transparent;
+  width: 70%;
+}
+
+.genre-add {
+  width: 10%;
+}
