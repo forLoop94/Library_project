@@ -10,6 +10,23 @@ const displaySection = document.querySelector('.display');
 let libraryCollection = JSON.parse(localStorage.getItem('libraryCollection'));
 if (!libraryCollection) localStorage.setItem('libraryCollection', '[]');
 
+const addGenre = (name) => {
+  const arr = JSON.parse(localStorage.getItem('libraryCollection'));
+  function Genre(name) {
+    this.name = name;
+    this.books = [];
+  }
+
+  const newGenre = new Genre(name);
+  arr.push(newGenre)
+  localStorage.setItem('libraryCollection', JSON.stringify(arr));
+}
+
+genreForm.addEventListener('submit', () => {
+  addGenre(genreInput.value);
+  render();
+})
+
 const render = () => {
   const arr = JSON.parse(localStorage.getItem('libraryCollection'));
   genreDisplay.innerHTML = '';
