@@ -9,6 +9,10 @@
   display: flex;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 body {
   justify-content: center;
   padding: 10% 0rem;
