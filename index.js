@@ -1,5 +1,5 @@
-import { addGenre } from "../modules/addGenre.js";
-import { render } from "../modules/render.js";
+import { addGenre } from "./modules/addGenre.js";
+import { render } from "./modules/render.js";
 
 const genreForm = document.querySelector('[data-genre-form]');
 const genreInput = document.querySelector('.genre-input');
