@@ -3,6 +3,7 @@ import addBook from "./addBook.js";
 import removeGenre from "./removeGenre.js";
 import editGenre from "./editGenre.js";
 import { small } from "./addGenre.js";
+import updateIndex from "./updateIndex.js";
 
 const genreDisplay = document.querySelector('.genre-display');
 const formSection = document.querySelector('.form-section');
@@ -66,10 +67,23 @@ const editHandler = (e) => {
   small.textContent = '';
   console.log(e.target.previousSibling)
   const bookTitle = e.target.previousSibling;
-  // bookTitle.contentEditable = true;
-  console.log(bookTitle.contentEditable)
+  console.log(bookTitle.textContent)
   editGenre(bookTitle, e.target.id);
-  render();
+  const parentId = e.target.id;
+  e.target.style.display = 'none';
+  bookTitle.focus();
+
+  bookTitle.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+      const arr = JSON.parse(localStorage.getItem('libraryCollection'));
+
+      arr[parentId].name = bookTitle.textContent;
+
+      updateIndex(arr);
+      localStorage.setItem('libraryCollection', JSON.stringify(arr));
+      render();
+    }
+  })
 }
 
 export { render, removeHandler };

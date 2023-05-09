@@ -22,8 +22,7 @@ const addGenre = (name) => {
 
   small.textContent = '';
   arr.push(newGenre);
-  updateIndex(arr)
-  console.log(newGenre.index)
+  updateIndex(arr);
   localStorage.setItem('libraryCollection', JSON.stringify(arr));
 };
 
