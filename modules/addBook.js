@@ -4,13 +4,13 @@ export default (title, author, id) => {
     this.author = author;
   }
 
-  const arr = JSON.parse(localStorage.getItem('libraryCollection'));
-
   const newBook = new Book(title, author);
+
+  const arr = JSON.parse(localStorage.getItem('libraryCollection'));
 
   for (let i = 0; i < arr.length; i++) {
     const single = arr[i];
-    if (single.name === id) {
+    if (single.index === parseFloat(id)) {
       single.books = single.books.concat(newBook);
       localStorage.setItem('libraryCollection', JSON.stringify(arr));
     }

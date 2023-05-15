@@ -65,9 +65,7 @@ const removeHandler = (e) => {
 
 const editHandler = (e) => {
   small.textContent = '';
-  console.log(e.target.previousSibling)
   const bookTitle = e.target.previousSibling;
-  console.log(bookTitle.textContent)
   editGenre(bookTitle, e.target.id);
   const parentId = e.target.id;
   e.target.style.display = 'none';
