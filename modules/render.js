@@ -41,7 +41,7 @@ const render = () => {
       const addBookForm = document.createElement('form');
       addBookForm.className = 'add-book-class';
       addBookForm.action = '#';
-      addBookForm.innerHTML = `<p>Add some ${e.target.textContent} books below</p><input placeholder='Add Title' class='add-book-input'><input placeholder='Add author' class='add-author-input'><button type='submit' class='add-book-btn'>Add</button>`;
+      addBookForm.innerHTML = `<p>Add some ${e.target.textContent} books below</p><input placeholder='Add Title' class='add-book-input' required><input placeholder='Add author' class='add-author-input' required><button type='submit' class='add-book-btn'>Add</button>`;
       formSection.appendChild(addBookForm);
 
       const title = document.querySelector('.add-book-input');

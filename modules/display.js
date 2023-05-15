@@ -10,7 +10,7 @@ const display = (id) => {
         const selectedBook = selectedGenre.books[j];
         const bookContainer = document.createElement('div');
         bookContainer.className = 'book-container';
-        bookContainer.innerHTML = `<div class='book-div flex'><div>${selectedBook.title} by ${selectedBook.author}</div><buton class='remove-book'>Remove</buton><div>`;
+        bookContainer.innerHTML = `<div class='book-div flex'><p>${selectedBook.title} by ${selectedBook.author}</p><i class='fa fa-pencil'></i><i class='fa fa-trash'></i><div>`;
         displaySection.appendChild(bookContainer);
       }
     }
