@@ -1,3 +1,5 @@
+import removeBook from "./removeBook.js";
+
 const displaySection = document.querySelector('.display');
 
 const display = (id) => {
@@ -10,11 +12,24 @@ const display = (id) => {
         const selectedBook = selectedGenre.books[j];
         const bookContainer = document.createElement('div');
         bookContainer.className = 'book-container';
-        bookContainer.innerHTML = `<div class='book-div flex'><p>${selectedBook.title} by ${selectedBook.author}</p><i class='fa fa-pencil'></i><i class='fa fa-trash'></i><div>`;
+        bookContainer.setAttribute('id', id)
+        bookContainer.innerHTML = `<div class='book-div flex'><p>${selectedBook.title} by ${selectedBook.author}</p><i class='fa fa-pencil'></i><i id=${selectedBook.index} class='fa fa-trash delete-book'></i><div>`;
         displaySection.appendChild(bookContainer);
+
+        const removeBook = document.querySelectorAll('.delete-book');
+        removeBook.forEach(btn => {
+          btn.addEventListener('click', removeBookHandler);
+        })
       }
     }
   }
 };
+
+const removeBookHandler = (e) => {
+  const parent = e.target.parentNode.parentNode;
+  const parentId = parent.getAttribute('id');
+  removeBook(parentId, e.target.id);
+  display(parentId);
+}
 
 export default display;

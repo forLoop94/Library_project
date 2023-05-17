@@ -10,6 +10,7 @@ if (!libraryCollection) localStorage.setItem('libraryCollection', '[]');
 genreForm.addEventListener('submit', () => {
   addGenre(genreInput.value);
   render();
+  genreInput.value = '';
 });
 
 render();
