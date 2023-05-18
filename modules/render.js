@@ -1,4 +1,4 @@
-import display from "./display.js";
+import { display } from "./display.js";
 import addBook from "./addBook.js";
 import removeGenre from "./removeGenre.js";
 import editGenre from "./editGenre.js";
@@ -42,7 +42,7 @@ const render = () => {
       const addBookForm = document.createElement('form');
       addBookForm.className = 'add-book-class';
       addBookForm.action = '#';
-      addBookForm.innerHTML = `<p>Input the title and author of your ${e.target.textContent} book in the fields below...</p><div class='input-area flex'><input placeholder='Add Title' class='add-book-input' required><input placeholder='Add author' class='add-author-input' required><button type='submit' class='add-book-btn'>+</button></div>`;
+      addBookForm.innerHTML = `<p>Input the title and author of your <strong>${e.target.textContent}</strong> book in the fields below...</p><div class='input-area flex'><input placeholder='Add Title' class='add-book-input' required><input placeholder='Add author' class='add-author-input' required><button type='submit' class='add-book-btn'>+</button></div>`;
       formSection.appendChild(addBookForm);
 
       const title = document.querySelector('.add-book-input');
@@ -85,4 +85,4 @@ const editHandler = (e) => {
   })
 }
 
-export { render, removeHandler };
+export { render, removeHandler, formSection };

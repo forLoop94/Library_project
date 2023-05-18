@@ -1,9 +1,16 @@
 import removeBook from "./removeBook.js";
+import { quote } from "./home.js";
+import { formSection } from "./render.js";
+import { contactDetails } from "./contact.js";
 
 const displaySection = document.querySelector('.display');
 
 const display = (id) => {
   const arr = JSON.parse(localStorage.getItem('libraryCollection'));
+  quote.classList.toggle('inactive', true);
+  displaySection.classList.toggle('inactive', false);
+  formSection.classList.toggle('inactive', false);
+  contactDetails.classList.toggle('inactive', true);
   displaySection.innerHTML = '';
   for (let i = 0; i < arr.length; i++) {
     const selectedGenre = arr[i];
@@ -36,4 +43,4 @@ const removeBookHandler = (e) => {
   display(parentId);
 }
 
-export default display;
+export { display, displaySection };
