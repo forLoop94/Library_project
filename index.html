@@ -7,23 +7,28 @@
   <title>Library App</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Macondo&display=swap" rel="stylesheet">
   <script defer type="module" src="index.js"></script>
 </head>
-<body class="flex">
+<body>
+  <div class="upper-background"></div>
+  <div class="lower-background"></div>
   <main class="flex">
     <section class="menu">
       <div class="genre-display"></div>
       <form action="#" data-genre-form class="genre-form">
-        <input type="text" class="genre-input" placeholder="Add new genre" required>
+        <input type="text" class="genre-input" placeholder="Create Collection" required>
         <button class="genre-add" type="submit">+</button>
       </form>
       <small></small>
     </section>
-    <section class="main-body">
+    <section class="main-body flex">
       <header><h1>My Library</h1></header>
       <div class="display"></div>
       <div class="form-section"></div>
-      <footer>Copyrights...</footer>
+      <footer><i class="fa fa-copyright"></i>2023 Charles Andrews</footer>
     </section>
   </main>
 </body>

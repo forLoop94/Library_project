@@ -3,24 +3,39 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 1.1rem;
+  color: #0B2447;
+  font-family: macondo, 'Times New Roman', Times, serif;
 }
 
 .flex {
   display: flex;
 }
 
+.upper-background {
+  background: url('https://images.pexels.com/photos/1018136/pexels-photo-1018136.jpeg?auto=compress&cs=tinysrgb&w=5000');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  height: 70vh;
+}
+
+.lower-background {
+  height: 30vh;
+  background-color: #19376D;
+}
+
 .space-between {
   justify-content: space-between;
 }
 
-body {
-  justify-content: center;
-  padding: 10% 0rem;
-  background-color: black;
-}
-
 main {
-  width: 70%;
+  width: 90%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 80vh;
+  box-shadow: 5px -5px 10px rgb(174, 169, 169);
 }
 
 h1 {
@@ -28,28 +43,93 @@ h1 {
 }
 
 main section {
-  padding: 2rem;
+  padding: 2rem 2rem 0rem 2rem;
 }
 
 .menu {
-  background-color: aqua;
+  background-color: #19376D;
 }
 
 .main-body {
   width: 70%;
   background-color: white;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.display {
+  height: 30vh;
+  width: 50vw;
+  overflow-y: scroll;
+}
+
+.form-section {
+  
+}
+
+.book-container {
+  position: relative;
+}
+
+.fa-pencil, .fa-trash {
+  color: rgb(120, 120, 120);
+  position: absolute;
+  right: 0.5rem;
+}
+
+.fa-pencil {
+  right: 2rem;
+}
+
+.input-area input{
+  width: 30%;
+  border: none;
+  border-bottom: 1px solid rgb(120, 120, 120);
+  margin-right: 0.5rem;
+}
+
+.input-area button {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+}
+
+.input-area button:hover {
+  padding: 0.1rem;
+  background-color: #e9f3f7;
+}
+
+footer {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.genre-class p {
+  color: #f6fcfe;
 }
 
 .genre-display, genre-form {
   padding-bottom: 2rem;
+  position: relative;
 }
 
 .genre-input, .genre-add {
   border: none;
+  border-bottom: 2px solid #e9f3f7;
   background: transparent;
   width: 70%;
+  color: #e9f3f7;
+  font-size: 0.8rem;
 }
 
 .genre-add {
   width: 10%;
+}
+
+.add-book-class p {
+  color: rgb(120, 120, 120);
+  font-size: 16px;
+  padding: 1rem 0rem;
+  font-style: italic;
 }

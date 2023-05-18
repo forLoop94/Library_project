@@ -10,10 +10,14 @@ const display = (id) => {
     if (selectedGenre.index === parseFloat(id)) {
       for (let j = 0; j < selectedGenre.books.length; j++) {
         const selectedBook = selectedGenre.books[j];
+
         const bookContainer = document.createElement('div');
         bookContainer.className = 'book-container';
         bookContainer.setAttribute('id', id)
         bookContainer.innerHTML = `<div class='book-div flex'><p>${selectedBook.title} by ${selectedBook.author}</p><i class='fa fa-pencil'></i><i id=${selectedBook.index} class='fa fa-trash delete-book'></i><div>`;
+        if (j % 2 === 0) {
+          bookContainer.style.backgroundColor = '#f6fcfe';
+        }
         displaySection.appendChild(bookContainer);
 
         const removeBook = document.querySelectorAll('.delete-book');
