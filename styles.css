@@ -48,10 +48,11 @@ main section {
 
 .menu {
   background-color: #19376D;
+  width: 40%;
 }
 
 .main-body {
-  width: 70%;
+  width: 60%;
   background-color: white;
   flex-direction: column;
   justify-content: space-between;
@@ -105,12 +106,45 @@ footer {
   font-size: 0.8rem;
 }
 
-.genre-class p {
+.menu ul {
+  list-style-type: none;
+  padding-bottom: 2rem;
+}
+
+.menu li, .menu h2 {
   color: #f6fcfe;
 }
 
+.menu h2 {
+  margin-bottom: 1rem;
+}
+
+.social-media {
+  list-style-type: none;
+  padding-top: 1rem;
+}
+
+.social-media i {
+  margin-right: 10px;
+  color: #f6fcfe;
+}
+
+.genre-class p {
+  color: #f6fcfe;
+  margin-bottom: 0.5rem;
+}
+
+.genre-display {
+  height: 40%;
+  margin-bottom: 1rem;
+}
+
+small {
+  color: red; 
+  font-size: 12px;
+}
+
 .genre-display, genre-form {
-  padding-bottom: 2rem;
   position: relative;
 }
 
@@ -132,4 +166,19 @@ footer {
   font-size: 16px;
   padding: 1rem 0rem;
   font-style: italic;
+}
+
+.inactive {
+  display: none;
+}
+
+.active {
+  display: flex;
+}
+
+.status {
+  border: none;
+  width: 15%;
+  font-size: 0.7rem;
+  margin-right: 1rem;
 }

@@ -2,6 +2,7 @@ import removeBook from "./removeBook.js";
 import { quote } from "./home.js";
 import { formSection } from "./render.js";
 import { contactDetails } from "./contact.js";
+import changeReadStatus from "./changeReadStatus.js";
 
 const displaySection = document.querySelector('.display');
 
@@ -20,12 +21,30 @@ const display = (id) => {
 
         const bookContainer = document.createElement('div');
         bookContainer.className = 'book-container';
+        bookContainer.classList.add('flex');
         bookContainer.setAttribute('id', id)
-        bookContainer.innerHTML = `<div class='book-div flex'><p>${selectedBook.title} by ${selectedBook.author}</p><i class='fa fa-pencil'></i><i id=${selectedBook.index} class='fa fa-trash delete-book'></i><div>`;
+        bookContainer.innerHTML = `<select name="status" class="status" id=${selectedBook.index}>
+          <option value=${selectedBook.index}>${selectedBook.status}</option>
+          <option value="completed">Completed</option>
+          <option value="in-progress">In progress</option>
+          <option value="not-read">Not-read</option>
+        </select>
+        <div class='book-div flex'>
+          <p>${selectedBook.title} by ${selectedBook.author}</p>
+          <i class='fa fa-pencil'></i>
+          <i id=${selectedBook.index} class='fa fa-trash delete-book'></i>
+        <div>`;
+
         if (j % 2 === 0) {
           bookContainer.style.backgroundColor = '#f6fcfe';
         }
         displaySection.appendChild(bookContainer);
+
+        const readStatus = document.querySelectorAll('.status');
+
+        readStatus.forEach((book) => {
+          book.addEventListener('change', changeReadStatus);
+        })
 
         const removeBook = document.querySelectorAll('.delete-book');
         removeBook.forEach(btn => {
@@ -35,6 +54,22 @@ const display = (id) => {
     }
   }
 };
+
+const CheckStatus = (currentStatus, selected) => {
+  switch(currentStatus) {
+    case "Completed":
+      return selected.style.backgroundColor = 'green';
+      break;
+    case "in-progress":
+      return selected.style.backgroundColor = 'yellow';
+      break;
+    case "not-read":
+      return selected.style.backgroundColor = 'red';
+      break;
+    default:
+      selected.style.backgroundColor = 'grey';
+  }
+}
 
 const removeBookHandler = (e) => {
   const parent = e.target.parentNode.parentNode;

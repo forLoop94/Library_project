@@ -4,6 +4,7 @@ export default (title, author, id) => {
     this.title = title;
     this.author = author;
     this.index = arr[id].books.length;
+    this.status = 'not-read';
   }
 
   const newBook = new Book(title, author);
