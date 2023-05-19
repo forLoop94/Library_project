@@ -3,6 +3,7 @@ import { quote } from "./home.js";
 import { formSection } from "./render.js";
 import { contactDetails } from "./contact.js";
 import changeReadStatus from "./changeReadStatus.js";
+import checkStatus from "./checkStatus.js";
 
 const displaySection = document.querySelector('.display');
 
@@ -24,7 +25,7 @@ const display = (id) => {
         bookContainer.classList.add('flex');
         bookContainer.setAttribute('id', id)
         bookContainer.innerHTML = `<select name="status" class="status" id=${selectedBook.index}>
-          <option value=${selectedBook.index}>${selectedBook.status}</option>
+          <option value=${selectedBook.status}>${selectedBook.status}</option>
           <option value="completed">Completed</option>
           <option value="in-progress">In progress</option>
           <option value="not-read">Not-read</option>
@@ -38,6 +39,10 @@ const display = (id) => {
         if (j % 2 === 0) {
           bookContainer.style.backgroundColor = '#f6fcfe';
         }
+
+        const status = bookContainer.children[0];
+
+        checkStatus(status.value, status);
         displaySection.appendChild(bookContainer);
 
         const readStatus = document.querySelectorAll('.status');
@@ -54,22 +59,6 @@ const display = (id) => {
     }
   }
 };
-
-const CheckStatus = (currentStatus, selected) => {
-  switch(currentStatus) {
-    case "Completed":
-      return selected.style.backgroundColor = 'green';
-      break;
-    case "in-progress":
-      return selected.style.backgroundColor = 'yellow';
-      break;
-    case "not-read":
-      return selected.style.backgroundColor = 'red';
-      break;
-    default:
-      selected.style.backgroundColor = 'grey';
-  }
-}
 
 const removeBookHandler = (e) => {
   const parent = e.target.parentNode.parentNode;

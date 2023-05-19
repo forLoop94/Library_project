@@ -178,7 +178,13 @@ small {
 
 .status {
   border: none;
-  width: 15%;
+  border-radius: 5px;
+  width: 7%;
   font-size: 0.7rem;
   margin-right: 1rem;
+  height: 1rem;
+}
+
+body {
+  background-color: rgb(241, 103, 76);
 }
